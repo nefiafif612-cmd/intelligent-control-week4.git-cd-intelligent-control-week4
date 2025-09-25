@@ -1,0 +1,37 @@
+Nama  : Nefi Afif Sujatyana
+NIM   : 224308093
+Kelas : TKA-7D
+
+Analisis Hasil:
+1. Bagaimana performa agen dalam mengontrol environment CartPole?
+   - Performa agen alam mengontrol environment CartPole bergantung pada kemampuannya menjaga keseimbangan tiang dengan menggerakkan ke kiri atau kanan. Pada awal pelatihan, agen sering mengalami kegagalan dikarenakan masih mengeksplorasi tindakan secara acak, tetapi seiring waktu dan melalui pembaruan nilai Q menggunakan Deep Q-Networks (DQN), agen mulai mengenali pola optimal untuk mempertahankan keseimbangan lebih lama. Dengan strategi eksplorasi yang dikurangi secara bertahap (epsilon decay). Jika model dilatih dengan baik, agen dapat secara konsisten mempertahankan keseimbangan, menunjukkan bahwa ia telah berhasil mempelajari strategi optimal dalam mengendalikan lingkungan CartPole.
+
+2. Bagaimana perubahan parameter (misal: gamma, epsilon, learning rate) mempengaruhi kinerja agen?
+   - Perubahan parameter seperti (gamma, epsilon, learning rate) mempengaruhi kinerja agen pada reward jangka panjang atau langsung, epsilon (tingkat eksplorasi) menentukan keseimbangan antara eksplorasi dan eksploitasi, dan learning rate (kecepatan pembelajaran) memengaruhi stabilitas dan kecepatan konvergensi pelatihan. 
+
+3. Apa tantangan yang muncul selama pelatihan agen RL?
+   - Tantangan yang muncul selama pelatihan agen Rl antara lain:
+     1). Ketidakstabilan pembelajaran sering terjadi karena pembaruan bobot yang tidak terkendali, terutama pada algoritma berbasis Deep Q-Networks (DQN) yang menggunakan jaringan saraf tiruan.
+     2). Kesulitan menemukan keseimbangan optimal antara eksplorasi dan eksploitasi. Jika eksplorasi terlalu sedikit, agen bisa terjebak dalam kebijakan suboptimal, sementara eksplorasi berlebihan dapat memperlambat konvergensi. Selanjutnya overfitting terhadap lingkungan pelatihan bisa terjadi jika agen terlalu terlatih pada satu skenario tanpa cukup variasi, sehingga sulit beradaptasi di lingkungan yang sedikit berbeda.
+     3). Kompleksitas ruang keadaan dan aksi dalam lingkungan yang lebih rumit. 
+
+Diskusi:
+1. Apa perbedaan utama antara Reinforcement Learning dan metode Supervised Learning dalam sistem kendali?
+   - Perbedaan utama antara Reinforcement Learning dan metode Supervised Learning dalam sistem kendali adalah:
+     1). Pada Reinforcement Learning: agen belajar dengan berinteraksi langsung dengan lingkungan. Umpan balik yang diterima berupa hadiah (rewards) atau hukuman (penalties) yang menunjukkan seberapa baik tindakan agen. Tujuan agen adalah untuk memaksimalkan total hadiah yang diterima seiring waktu. RL cocok untuk masalah di mana tindakan yang diambil memiliki konsekuensi jangka panjang dan umpan balik tidak selalu langsung tersedia. RL tidak membutuhkan data berlabel.
+     2). Sedangkan pada metode Supervised Learning: agen belajar dari data berlabel, di mana setiap data masukan dipasangkan dengan keluaran yang benar. Tujuan agen adalah untuk mempelajari fungsi yang memetakan masukan ke keluaran dengan benar. SL cocok untuk masalah di mana data berlabel tersedia dan tujuan utamanya adalah untuk memprediksi atau mengklasifikasikan data baru. SL membutuhkan data berlabel.
+
+2. Bagaimana strategi eksplorasi (exploration) dan eksploitasi (exploitation) dapat dioptimalkan pada agen RL?
+   - Strategi eksplorasi (exploration) dan eksploitasi (exploitation) dapat dioptimalkan pada agen RL dengan cara berikut:
+     1). Epsilon-greedy: Strategi ini adalah yang paling umum. Agen memilih tindakan terbaik (eksploitasi) dengan probabilitas 1-epsilon dan tindakan acak (eksplorasi) dengan probabilitas epsilon.
+     2). Eksplorasi berbasis optimisme: Strategi ini mendorong agen untuk menjelajahi keadaan yang belum diketahui dengan memberikan nilai yang lebih tinggi pada keadaan tersebut.
+     3). Strategi eksplorasi berbasis noise: Menambahkan noise pada aksi yang dipilih oleh agen, untuk membuat agen dapat mencoba aksi-aksi yang berada disekitar aksi optimal.
+     4). Menggunakan Upper Confidence Bounds (UCB): Metode UCB menggunakan batas kepercayaan atas untuk memilih tindakan. Tindakan dengan nilai perkiraan yang lebih tinggi dan ketidakpastian yang lebih besar lebih disukai. Ini menyeimbangkan eksplorasi dan eksploitasi dengan mempertimbangkan ketidakpastian tentang nilai tindakan.
+
+3. Potensi aplikasi lain dari RL dalam sistem kendali nyata apa saja yang dapat diimplementasikan?
+   - Potensi aplikasi lain dari RL dalam sistem kendali nyata yang dapat diimplementasikan antara lain:
+     1). Kendaraan Otonom: RL dapat digunakan untuk melatih kendaraan otonom dalam berbagai tugas, seperti navigasi, pengendalian lalu lintas, dan pengambilan keputusan dalam situasi yang kompleks. Contohnya, RL dapat membantu kendaraan otonom untuk belajar menghindari rintangan, memilih jalur yang optimal, dan beradaptasi dengan kondisi lalu lintas yang berubah-ubah.
+     2). Robotika: RL memungkinkan robot untuk mempelajari tugas-tugas kompleks secara mandiri, seperti manipulasi objek, navigasi di lingkungan yang tidak terstruktur, dan interaksi dengan manusia. Contohnya, RL dapat digunakan untuk melatih robot industri untuk melakukan tugas perakitan yang rumit atau robot layanan untuk memberikan bantuan kepada manusia di lingkungan rumah.
+     3). Sistem Energi: RL dapat digunakan untuk mengoptimalkan pengelolaan sistem energi, seperti jaringan listrik, pembangkit listrik, dan sistem penyimpanan energi. Contohnya, RL dapat membantu mengoptimalkan distribusi energi, memprediksi permintaan energi, dan mengendalikan pembangkit listrik terbarukan.
+   
+
